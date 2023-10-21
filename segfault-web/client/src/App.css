@@ -1,38 +1,184 @@
-.App {
-  text-align: center;
+/* General Settings */
+body, h1, h2, h3, h4, h5, h6, p, button, input {
+	font-family: 'Montserrat', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Container Styles */
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	background-color: #f2f2f2;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.container-logged-in {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	height: 100%;
+	background-color: #f2f2f2;
+}
+
+/* Login Box Styles */
+.login-box {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.login-input, .login-button {
+	margin: 10px;
+	padding: 10px;
+	width: 200px;
+}
+
+.login-button {
+	background-color: #007bff;
+	color: white;
+	cursor: pointer;
+	border: none;
+	border-radius: 4px;
+}
+
+/* Dashboard Styles */
+.dashboard {
+	position: relative;
+	width: 100%;
+	top: 0;
+}
+
+.logout-button {
+	background-color: #f00;
+	color: white;
+	padding: 10px;
+	border: none;
+	cursor: pointer;
+	margin-right: 10px;  /* Ensures that there is a 10px gap between the button and the edge of the screen */
+}
+
+.image-gallery {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;  /* Horizontally center the images */
+	align-items: center;  /* Vertically center the images */
+	height: calc(100vh - 60px);  /* Full height minus navbar height */
+	padding: 20px;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .gallery-image {
+	max-width: 200px;
+	cursor: pointer;
+	margin: auto;  /* Ensures the image stays centered in its container */
   }
-  to {
-    transform: rotate(360deg);
-  }
+
+/* Modal Styles */
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1;  /* Lower z-index than navbar */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
 }
+
+.modal-content {
+    position: fixed;  /* Changed from relative to fixed */
+    background-color: rgba(255, 255, 255, 0.8);  /* Changed from white to transparent */
+    top: 0;  /* Added to start from the top edge */
+    left: 0;  /* Added to start from the left edge */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content img {
+    object-fit: contain;
+    max-width: 200%;
+    max-height: 200%;
+}
+
+/* Updated Navbar Styles for Superposition */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #007bff;
+    color: white;
+    padding: 15px;
+    width: 100%;
+    position: fixed;  /* Changed to fixed for superposition */
+    z-index: 2;  /* Higher z-index to appear on top */
+    top: 0;  /* Added to stick to the top */
+	box-sizing: border-box;  /* Ensures that padding is included in the total width */
+}
+
+.close {
+    position: absolute;
+    margin-bottom: 60vh;
+    right: 30px;
+    cursor: pointer;
+    font-size: 24px;
+    color: #ffffff;
+    background-color: #ff0000;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Share Links Styles */
+.share-links {
+	margin-left: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+button {
+	margin-top: 10px;
+	background-color: #007bff;
+	color: white;
+	padding: 10px;
+	cursor: pointer;
+	border: none;
+	border-radius: 4px;
+}
+
+/* Custom Button Styles */
+.button {
+	background-color: #4CAF50;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+}
+
+.link-form-popup {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #ffffff;
+	border: 2px solid #007bff;
+	padding: 20px;
+	border-radius: 8px;
+	z-index: 2;
+  }

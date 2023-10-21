@@ -1,0 +1,8 @@
+CREATE TABLE users (
+  username TEXT PRIMARY KEY,
+  password TEXT,
+  image TEXT
+);
+
+INSERT INTO users (username, password, image) VALUES ('admin', 'admin', 'https://via.placeholder.com/150');
+
