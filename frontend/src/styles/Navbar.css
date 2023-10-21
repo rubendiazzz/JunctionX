@@ -3,8 +3,9 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 50px;
-    background-color: #333;
-    color: white;
+    background-color: #2c3e50;  /* Darkened the color for a professional touch */
+    color: #ecf0f1;  /* Adjusted the color to a softer shade of white */
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);  /* Added a subtle shadow for depth */
 }
 
 .navbar-content {
@@ -12,19 +13,69 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
+	position: relative;
 }
+
+.overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+}
+
+.overlay > div { /* Assuming the form is the direct child of .overlay */
+    max-width: 500px; /* Or your desired max-width */
+    width: 100%;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
 
 button {
     margin-left: 10px;
-    padding: 5px 15px;
+    padding: 8px 18px;  /* Adjusted padding for better proportions */
     border: none;
-    background-color: #007BFF;
-    color: white;
+    background-color: #2980b9;  /* Altered the color for a more sophisticated look */
+    color: #ecf0f1;
     cursor: pointer;
     border-radius: 5px;
     font-size: 16px;
+    transition: all 0.3s ease;  /* Smooth transition for hover effects */
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #2471a3;  /* Darkened the hover color for better contrast */
+}
+
+.settings-dropdown {
+    position: absolute;
+    right: 50px;
+    top: 50px;
+    display: flex;
+    flex-direction: column;
+    background-color: #ecf0f1;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.settings-dropdown button {
+    padding: 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    color: #2c3e50;
+}
+
+.settings-dropdown button:hover {
+    background-color: #bdc3c7;
 }

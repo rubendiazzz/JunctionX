@@ -1,20 +1,21 @@
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: #f4f4f4;
+    background-color: #eaecee;  /* Adjusted the background for a cooler tone */
     margin: 0;
     padding: 0;
 }
 
 .container {
-    max-width: 600px;
+    max-width: 650px;  /* Increased the width slightly */
     margin: 50px auto;
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #ecf0f1;  /* Softened the background color */
+    padding: 30px;  /* Increased padding for a spacious feel */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);  /* Increased shadow for a floating effect */
+    border-radius: 5px;  /* Rounded the corners for modern styling */
 }
 
 h1 {
     text-align: center;
-    color: #333;
-    font-weight: 600; /* semi-bold */
+    color: #2c3e50;  /* Darkened the color for prominence */
+    font-weight: 600;
 }

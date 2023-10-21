@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/LoginForm.css';
 
-function LoginForm({ close }) {
+function LoginForm({ close, setIsLoggedIn }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
@@ -15,12 +15,13 @@ function LoginForm({ close }) {
                 },
                 body: JSON.stringify({ username, password }),
             });
-            
+
             const data = await response.json();
-            
+
             if (data.message) {
                 alert(data.message);
                 close();
+                setIsLoggedIn(true);
             } else {
                 alert(data.error);
             }
