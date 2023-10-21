@@ -1,7 +1,17 @@
 const express = require('express');
 const sqlite3 = require('sqlite3').verbose();
 const bcrypt = require('bcrypt');
+const multer = require('multer');
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, './uploads');
+    },
+    filename: (req, file, cb) => {
+        cb(null, Date.now() + '-' + file.originalname);
+    }
+});
 
+const upload = multer({ storage: storage });
 const app = express();
 const db = new sqlite3.Database('./database.sqlite');
 const saltRounds = 10;
@@ -9,6 +19,7 @@ const cors = require('cors');
 
 app.use(express.json());
 app.use(cors());
+app.use('/uploads', express.static('uploads'));
 // Crear la tabla si no existe
 db.run("CREATE TABLE if not exists user (id INTEGER PRIMARY KEY, username TEXT, password TEXT)");
 
@@ -59,7 +70,15 @@ app.post('/login', (req, res) => {
         }
     });
 });
-
+app.post('/upload', upload.single('image'), (req, res) => {
+    if (req.file) {
+        res.json({
+            imageUrl: `uploads/${req.file.filename}`
+        });
+    } else {
+        res.status(400).json({ error: 'No se pudo subir la imagen' });
+    }
+});
 const PORT = 3001;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
