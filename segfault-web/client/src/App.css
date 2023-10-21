@@ -100,16 +100,25 @@ body, h1, h2, h3, h4, h5, h6, p, button, input {
   
   .modal-content {
 	position: relative;
-	display: flex;
 	background-color: #ffffff;
-	padding: 20px;
 	border-radius: 10px;
 	box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-	flex-direction: row;
-	align-items: flex-start;
 	width: 100%;
   	max-width: 95%;
   	max-height: 95vh;
+	display: flex;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	padding: 20px;
+  }
+
+  .modal-content img {
+	object-fit: contain;
+	margin: 0 auto;  /* Añadido para centrar la imagen */
+	max-width: 60%;  /* Ajustado para dejar espacio para el botón y márgenes */
+	max-height: 100%;
   }
   
   .close {
@@ -123,16 +132,18 @@ body, h1, h2, h3, h4, h5, h6, p, button, input {
   .modal-image {
 	width: auto;
 	height: auto;
-	max-width: 95%;
-	max-height: 95vh;
+	max-width: none;
+	max-height: none;
+	transform: scale(2);
   }
   
   /* Estilos para la barra vertical de compartir */
   .share-links {
-	margin-left: 20px;
 	display: flex;
 	flex-direction: column;
-	gap: 10px;
+	align-items: flex-start;
+	justify-content: center;
+	width: 30%;  /* Ajustado para llenar el espacio restante */
   }
 
   button {
@@ -143,4 +154,19 @@ body, h1, h2, h3, h4, h5, h6, p, button, input {
 	cursor: pointer;
 	border: none;
 	border-radius: 4px;
+  }
+
+  .create-link-button {
+	background-color: #007bff;
+	color: #ffffff;
+	padding: 12px 24px;
+	border-radius: 4px;
+	border: none;
+	cursor: pointer;
+	font-size: 16px;
+	transition: background-color 0.3s ease;
+  }
+  
+  .create-link-button:hover {
+	background-color: #0056b3;
   }
