@@ -1,18 +1,16 @@
 import React, { useState } from 'react';
-import ImageModal from './ImageModal';  // Importar el nuevo componente
+import ImageModal from './ImageModal';
 import './App.css';
 
 const Dashboard = ({ onLogout }) => {
   const [selectedImage, setSelectedImage] = useState(null);
-  
-  // Imágenes de prueba
+
   const images = [
     "https://via.placeholder.com/150",
     "https://via.placeholder.com/200",
     "https://via.placeholder.com/250",
-	"https://via.placeholder.com/200",
     "https://via.placeholder.com/200",
-    // Añada más imágenes aquí
+    "/img/pfp.png",
   ];
 
   return (

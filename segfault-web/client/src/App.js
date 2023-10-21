@@ -1,43 +1,34 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Dashboard from './Dashboard';
+import ImageShare from './ImageShare';
 import './App.css';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  const login = () => {
-    setIsLoggedIn(true);
-  };
-
-  const logout = () => {
-    setIsLoggedIn(false);
-  };
-
-  const ImageShare = ({ match }) => {
-    const image = atob(match.params.image); // decode the base64 URL back to original
-    return <img src={image} alt="Shared" />;
-  };
+  const login = () => setIsLoggedIn(true);
+  const logout = () => setIsLoggedIn(false);
 
   return (
     <Router>
-      <Switch>
-        <Route path="/share/:image" component={ImageShare} />
-        <Route path="/">
-          <div className={isLoggedIn ? "container-logged-in" : "container"}>
-            {isLoggedIn ? (
-              <Dashboard onLogout={logout} />
-            ) : (
-              <div className="login-box">
-                <h1>Login</h1>
-                <input type="text" className="login-input" placeholder="Username" />
-                <input type="password" className="login-input" placeholder="Password" />
-                <button className="login-button" onClick={login}>Login</button>
-              </div>
-            )}
-          </div>
-        </Route>
-      </Switch>
+      <Routes>
+        <Route path="/share/:image" element={<ImageShare />} />
+        <Route path="/" element={
+          <>
+            <div className={isLoggedIn ? "container-logged-in" : "container"}>
+              {isLoggedIn ? <Dashboard onLogout={logout} /> : (
+                <div className="login-box">
+                  <h1>Login</h1>
+                  <input type="text" className="login-input" placeholder="Username" />
+                  <input type="password" className="login-input" placeholder="Password" />
+                  <button className="login-button" onClick={login}>Login</button>
+                </div>
+              )}
+            </div>
+          </>
+        } />
+      </Routes>
     </Router>
   );
 }
