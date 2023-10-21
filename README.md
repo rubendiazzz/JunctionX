@@ -32,5 +32,5 @@ El objetivo principal es proporcionar una solución de seguridad robusta, escala
 
 ---
 
-Desarrollado por [Su nombre o el nombre de su equipo]
+Desarrollado por [Segmentation Fault en el JunctionX de Málaga]
 
