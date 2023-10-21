@@ -1,14 +1,12 @@
 import React from 'react';
-import LoginForm from './LoginForm';
-import RegisterForm from './RegisterForm';
+import Navbar from './Navbar';
 import '../styles/App.css';
 
 function App() {
     return (
         <div>
             <h1>Bienvenido a Examfy</h1>
-            <LoginForm />
-            <RegisterForm />
+            <Navbar />
         </div>
     );
 }

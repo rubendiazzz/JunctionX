@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #ecf0f1;
+    margin: 0;
+    padding: 0;
+}
+
+.overlay {
+    position: fixed;  /* Fixed position */
+    top: 0;
+    left: 0;
+    width: 100%;      /* Full width */
+    height: 100%;     /* Full height */
+    display: flex;    /* Use Flexbox */
+    justify-content: center;  /* Center horizontally */
+    align-items: center;      /* Center vertically */
+    background-color: rgba(0, 0, 0, 0.5);  /* Optional: semi-transparent background */
+    z-index: 1000;   /* Ensure it appears above other elements */
+}
