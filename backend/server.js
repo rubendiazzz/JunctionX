@@ -22,7 +22,7 @@ app.use(cors());
 app.use('/uploads', express.static('uploads'));
 // Crear la tabla si no existe
 db.run("CREATE TABLE if not exists user (id INTEGER PRIMARY KEY, username TEXT, password TEXT)");
-
+db.run("CREATE TABLE if not exists images (id INTEGER PRIMARY KEY, url TEXT)");
 app.post('/register', (req, res) => {
     const { username, password } = req.body;
 	console.log(req);
@@ -70,6 +70,7 @@ app.post('/login', (req, res) => {
         }
     });
 });
+<<<<<<< HEAD
 app.post('/upload', upload.single('image'), (req, res) => {
     if (req.file) {
         res.json({
@@ -78,6 +79,21 @@ app.post('/upload', upload.single('image'), (req, res) => {
     } else {
         res.status(400).json({ error: 'No se pudo subir la imagen' });
     }
+=======
+// Nuevo endpoint para procesar la imagen
+app.post('/process-image', (req, res) => {
+    const { imageUrl } = req.body;
+
+    // Supongamos que quieres almacenar esta imagen en una tabla "images" en tu base de datos SQLite
+    const stmt = db.prepare("INSERT INTO images (url) VALUES (?)");
+    stmt.run(imageUrl, function(err) {
+        if (err) {
+            res.status(400).json({ error: err.message });
+            return;
+        }
+        res.json({ message: "Imagen recibida y almacenada con éxito.", imageId: this.lastID });
+    });
+>>>>>>> frontend
 });
 const PORT = 3001;
 app.listen(PORT, () => {
