@@ -1,27 +1,30 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import Dashboard from './Dashboard';
+import './App.css';
 
 function App() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [image, setImage] = useState(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  const login = async () => {
-    try {
-      const res = await axios.post('http://localhost:5000/login', { username, password });
-      setImage(res.data.image);
-    } catch (err) {
-      console.error(err);
-      alert("Login failed");
-    }
+  const login = () => {
+    setIsLoggedIn(true);
+  };
+
+  const logout = () => {
+    setIsLoggedIn(false);
   };
 
   return (
-    <div>
-      <input type="text" placeholder="Username" onChange={(e) => setUsername(e.target.value)} />
-      <input type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
-      <button onClick={login}>Login</button>
-      {image && <img src={image} alt="User" />}
+    <div className={isLoggedIn ? "container-logged-in" : "container"}>
+      {isLoggedIn ? (
+        <Dashboard onLogout={logout} />
+      ) : (
+        <div className="login-box">
+          <h1>Login</h1>
+          <input type="text" className="login-input" placeholder="Username" />
+          <input type="password" className="login-input" placeholder="Password" />
+          <button className="login-button" onClick={login}>Login</button>
+        </div>
+      )}
     </div>
   );
 }
