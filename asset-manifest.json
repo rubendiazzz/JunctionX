@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/JunctionX/static/css/main.9d9b7066.css",
+    "main.js": "/JunctionX/static/js/main.95998452.js",
+    "index.html": "/JunctionX/index.html",
+    "main.9d9b7066.css.map": "/JunctionX/static/css/main.9d9b7066.css.map",
+    "main.95998452.js.map": "/JunctionX/static/js/main.95998452.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9d9b7066.css",
+    "static/js/main.95998452.js"
+  ]
+}
