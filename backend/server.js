@@ -19,19 +19,34 @@ const app = express();
 const db = new sqlite3.Database('./database.sqlite');
 const saltRounds = 10;
 
+// Configuración CORS
+const corsOptions = {
+  origin: 'http://localhost:3000',
+  credentials: true,
+};
+app.use(cors(corsOptions));
+
 app.use(session({
-  secret: 'your-secret-key',
+  secret: '0f50790cb6c201febf605ad718186bec887862f32c3ef17acb945533555e17c3303467e41c0f3043a1de62f84ab96be1ae4c6b314fb0be01b62c010104520109',
   resave: false,
   saveUninitialized: true,
   cookie: { secure: false }
 }));
 
 app.use(express.json());
-app.use(cors());
 app.use('/uploads', express.static('uploads'));
 
 db.run("CREATE TABLE if not exists user (id INTEGER PRIMARY KEY, username TEXT, password TEXT)");
 db.run("CREATE TABLE if not exists images (id INTEGER PRIMARY KEY, url TEXT, user_id INTEGER)");
+
+// Middleware para verificar si el usuario está autenticado
+const isAuthenticated = (req, res, next) => {
+  if (req.session.userId) {
+    next();
+  } else {
+    res.status(401).json({ error: 'No autorizado' });
+  }
+};
 
 app.post('/register', (req, res) => {
   const { username, password } = req.body;
@@ -64,10 +79,12 @@ app.post('/login', (req, res) => {
           res.status(500).json({ error: 'Error al verificar la contraseña' });
           return;
         }
-        if (result) {
-          req.session.userId = row.id;
-          res.json({ message: 'Login exitoso' });
-        } else {
+		if (result) {
+			req.session.userId = row.id;
+			console.log("User ID set in session:", req.session.userId);  // Añadir este log
+			res.json({ message: 'Login exitoso', session: req.session });
+		}
+		else {
           res.status(400).json({ error: 'Contraseña incorrecta' });
         }
       });
@@ -78,7 +95,13 @@ app.post('/login', (req, res) => {
 });
 
 app.post('/upload', upload.single('image'), (req, res) => {
+  console.log("Entrando al método de carga");
+  console.log("Session Data:", req.session);  // Añadir este log
+  if (!req.session.userId) {
+    return res.status(401).json({ error: 'No autorizado' });
+  }
   if (req.file) {
+    console.log("Archivo recibido:", req.file);
     const userId = req.session.userId;
     const stmt = db.prepare("INSERT INTO images (url, user_id) VALUES (?, ?)");
     stmt.run(`uploads/${req.file.filename}`, userId, function(err) {
@@ -92,6 +115,7 @@ app.post('/upload', upload.single('image'), (req, res) => {
       });
     });
   } else {
+    console.log("Error: No se recibió archivo");
     res.status(400).json({ error: 'No se pudo subir la imagen' });
   }
 });
