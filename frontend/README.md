@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+# Proyecto de Seguridad Cibernética
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Descripción
 
-## Available Scripts
+Este proyecto es una solución integral de seguridad cibernética diseñada para proteger redes empresariales. Utiliza tecnologías de vanguardia como inteligencia artificial para detección de anomalías, firewall de aplicaciones web y monitoreo en tiempo real. 
 
-In the project directory, you can run:
+### Características
 
-### `npm start`
+- **Detección de Anomalías**: Utiliza algoritmos de aprendizaje automático para identificar tráfico sospechoso y actividades inusuales.
+  
+- **Firewall de Aplicaciones Web**: Protege las aplicaciones web contra diversas amenazas como inyección SQL, XSS, y más.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Monitoreo en Tiempo Real**: Ofrece un panel de control en tiempo real que muestra el estado de la red y alertas instantáneas.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Integración con API**: Capacidad para integrarse con soluciones de seguridad existentes a través de API.
 
-### `npm test`
+### Tecnologías Utilizadas
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Lenguajes de Programación: C, C++, JavaScript
+- Frameworks: [Nombres de frameworks]
+- Herramientas: [Nombres de herramientas]
 
-### `npm run build`
+## Objetivo
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+El objetivo principal es proporcionar una solución de seguridad robusta, escalable y fácil de implementar que pueda satisfacer las necesidades de empresas de todos los tamaños.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Casos de Uso
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Protección de infraestructura crítica
+- Seguridad para aplicaciones web
+- Monitoreo de redes empresariales
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Desarrollado por [Segmentation Fault en el JunctionX de Málaga]
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

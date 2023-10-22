@@ -19,3 +19,26 @@ h1 {
     color: #2c3e50;  /* Darkened the color for prominence */
     font-weight: 600;
 }
+
+.image-gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Adjust the z-index as needed */
+}
+
+.image-container img {
+    max-width: 200px; /* Increase the maximum width for larger images */
+    max-height: 200px; /* Increase the maximum height for larger images */
+}
+
+.upload-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+}

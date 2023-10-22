@@ -3,10 +3,9 @@ import LoginForm from './LoginForm';
 import RegisterForm from './RegisterForm';
 import '../styles/Navbar.css';
 
-function Navbar() {
+function Navbar({ isLoggedIn, setIsLoggedIn }) {
     const [showLogin, setShowLogin] = useState(false);
     const [showRegister, setShowRegister] = useState(false);
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [showSettingsDropdown, setShowSettingsDropdown] = useState(false);
 
     const handleLogout = () => {

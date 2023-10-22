@@ -5,30 +5,30 @@ function LoginForm({ close, setIsLoggedIn }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
-    const handleLogin = async (e) => {
-        e.preventDefault();
-        try {
-            const response = await fetch('http://localhost:3001/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ username, password }),
-            });
-
-            const data = await response.json();
-
-            if (data.message) {
-                alert(data.message);
-                close();
-                setIsLoggedIn(true);
-            } else {
-                alert(data.error);
-            }
-        } catch (err) {
-            console.error("Error logging in:", err);
-        }
-    };
+	const handleLogin = async (e) => {
+		e.preventDefault();
+		try {
+			const response = await fetch('http://localhost:3001/login', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({ username, password }),
+			});
+	
+			const data = await response.json();
+	
+			if (data.message) {
+				alert(data.message);
+				close();
+				setIsLoggedIn(true); // Asegurándonos de que estamos actualizando el estado aquí
+			} else {
+				alert(data.error);
+			}
+		} catch (err) {
+			console.error("Error logging in:", err);
+		}
+	};
 
     return (
         <div className="popup">
