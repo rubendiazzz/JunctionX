@@ -1,36 +1,24 @@
-# Proyecto de Seguridad Cibernética
+# Privacidad y Seguridad de Imágenes: Propuesta al Reto Educativo
 
-## Descripción
+En el mundo digital actual, la **privacidad y la seguridad** de las imágenes son esenciales, especialmente en contextos educativos con menores. Desarrollamos una solución basada en técnicas avanzadas para proteger y administrar estas imágenes.
 
-Este proyecto es una solución integral de seguridad cibernética diseñada para proteger redes empresariales. Utiliza tecnologías de vanguardia como inteligencia artificial para detección de anomalías, firewall de aplicaciones web y monitoreo en tiempo real. 
+## IA Image Tracking
 
-### Características
+Originalmente consideramos usar códigos QR escondidos en imágenes para el rastreo. Sin embargo, optamos por una solución más avanzada.
 
-- **Detección de Anomalías**: Utiliza algoritmos de aprendizaje automático para identificar tráfico sospechoso y actividades inusuales.
-  
-- **Firewall de Aplicaciones Web**: Protege las aplicaciones web contra diversas amenazas como inyección SQL, XSS, y más.
+- **Rastreo de Enlaces One-Device**: Utilizamos la técnica de _fingerprinting_ para asociar cada enlace con un dispositivo específico. Si un enlace se propaga fuera del sistema, podemos rastrear su origen. Esto se complementa con términos y condiciones claros sobre el tratamiento de datos.
 
-- **Monitoreo en Tiempo Real**: Ofrece un panel de control en tiempo real que muestra el estado de la red y alertas instantáneas.
+- **DNN-Watermarking**: Implementamos marcas de agua usando Redes Neuronales Profundas (DNN), basado en el trabajo de Chuan Qin et al. Esto permite detectar y reconocer marcas de agua específicas que son invisibles al ojo humano. Esta tecnología garantiza que, incluso en caso de una difusión no autorizada, el origen de la imagen pueda ser verificado.
 
-- **Integración con API**: Capacidad para integrarse con soluciones de seguridad existentes a través de API.
+## Censura de Niños No Autorizados
 
-### Tecnologías Utilizadas
+Para proteger aún más la identidad de los menores, proponemos un método que desenfoca automáticamente las caras de aquellos niños no autorizados en las imágenes.
 
-- Lenguajes de Programación: C, C++, JavaScript
-- Frameworks: [Nombres de frameworks]
-- Herramientas: [Nombres de herramientas]
+Además, las imágenes que se comparten con el consentimiento adecuado tienen un "tracker" invisible, garantizando su rastreo constante. Cualquier persona que descargue la imagen tendrá que comprometerse a no redistribuirla.
 
-## Objetivo
+## Conclusión
 
-El objetivo principal es proporcionar una solución de seguridad robusta, escalable y fácil de implementar que pueda satisfacer las necesidades de empresas de todos los tamaños.
-
-## Casos de Uso
-
-- Protección de infraestructura crítica
-- Seguridad para aplicaciones web
-- Monitoreo de redes empresariales
+Con el desafío educativo en nuestro foco, nuestra solución busca equilibrar la innovación tecnológica con la seguridad y privacidad esenciales en entornos educativos.
 
 ---
-
-Desarrollado por [Segmentation Fault en el JunctionX de Málaga]
-
+**Nota**: Para más detalles técnicos y configuración, revisa los archivos de código y documentación adjunta.
